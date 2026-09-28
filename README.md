@@ -26,10 +26,11 @@ If you need to re-flash or inspect the robot's firmware, follow these steps:
 2. Create a new project and click on **Advanced** -> **Extensions**.
 3. Search for and add the official **`cutebot`** extension.
 4. Search for and add the official **`neopixel`** extension.
-5. Switch the editor from Blocks to **JavaScript / TypeScript** mode.
-6. Copy the code from `microbitapi.js` in this repo and paste it into the editor.
-7. Go to **Project Settings** (the gear icon) and ensure that **"No Pairing Required: Anyone can connect via Bluetooth"** is enabled.
-8. Click **Download** to flash the `.hex` file onto your micro:bit via USB.
+5. Search for and add the official **`bluetooth`** extension. When prompted, accept the removal of the incompatible **`radio`** extension.
+6. Switch the editor from Blocks to **JavaScript / TypeScript** mode.
+7. Copy the code from `microbitapi.js` in this repo and paste it into the editor.
+8. Go to **Project Settings** (the gear icon) and ensure that **"No Pairing Required: Anyone can connect via Bluetooth"** is enabled.
+9. Click **Download** to flash the `.hex` file onto your micro:bit via USB.
 
 When the firmware boots successfully or connects to a phone, the micro:bit LED matrix will display a **Happy Face**. If the Bluetooth connection drops, the firmware triggers a **safety auto-stop** (motors halt, lights off, buzzer quieted, and a Sad Face is displayed) to prevent runaway robot crashes.
 
