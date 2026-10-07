@@ -30,14 +30,12 @@ The challenge runs throughout Next App DevCon, culminating in the live champions
 
 | Day & Time | Event | Location | Details |
 | :--- | :--- | :--- | :--- |
-| **Wednesday** (All Day) | **Hack & Test Kickoff** | Robotics / Workshop Zone | Pick up a robot, pair over Bluetooth, and test baseline steering. |
-| **Thursday** (All Day) | **Open Track Practice & Tuning** | Competition Track (Workshop) | Practice cornering, calibrate line sensors, and fine-tune motor throttling. |
-| **Friday Morning** | **Qualifying & Final Polish** | Competition Track (Workshop) | Final test laps, qualifying check-ins, and race roster registration. |
-| **Friday Afternoon** *2:30pm* | **🏁 The Robot Rallye Finals** | Competition Track Main Stage | **Official timed trials!** Live leaderboard, judge evaluations, and awards ceremony. |
+| **Wednesday** (All Day) | **Hack & Test Kickoff** | Robot Rally booth area | Pick up a robot, pair over Bluetooth, and test baseline steering. |
+| **Thursday** (All Day) | **Open Track Practice & Tuning** | Robot Rally booth area | Practice cornering, calibrate line sensors, and fine-tune motor throttling. |
+| **Friday Morning** | **Qualifying & Final Polish** | Robot Rally booth area | Final test laps, qualifying check-ins, and race roster registration. |
+| **Friday Afternoon** *2:30pm* | **🏁 The Robot Rallye Finals** | Robot Rally booth area | **Official timed trials!** Live leaderboard, judge evaluations, and awards ceremony. |
 
 > [!IMPORTANT]
-> The exact start time for Friday afternoon's finals will be confirmed during Friday morning announcements and posted at the Track Booth. Make sure your team is registered before Friday midday!
->
 > During the official finals, each team will have **one timed attempt**. Make it count!
 
 ---
