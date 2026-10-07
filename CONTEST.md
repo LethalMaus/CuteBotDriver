@@ -4,6 +4,8 @@ Welcome to the official **Next App Robot Rally**! ([nextappcon.com](https://www.
 
 We are challenging developers across every ecosystem—**Android**, **iOS**, **Flutter**, and **React Native**—to take our custom-built Elecfreaks Cutebot robot car platform and code the fastest, smartest, and most innovative mobile controller app to conquer our race track printed on the floor.
 
+![Robot Rally Race Track & Booth Area](images/race_booth_area.jpg)
+
 ---
 
 ## 🎯 The Challenge
@@ -44,10 +46,12 @@ The challenge runs throughout Next App DevCon, culminating in the live champions
 
 Winners are determined by the lowest **Adjusted Lap Time** (Raw Time minus Earned Bonus Deductions):
 
-* 🥇 **1st Place:** Grand Prize Trophy + LEGO Robotics Set + your very own Elecfreaks Cutebot Robot Kit!
-* 🥈 **2nd Place:** Official Elecfreaks Cutebot Robot Kit + Conference Swag Pack.
-* 🥉 **3rd Place:** Official Elecfreaks Cutebot Robot Kit.
+* 🥇 **1st Place:** 1st Place Trophy + LEGO Set (NASA Hubble Space Telescope) + your very own Elecfreaks Cutebot Robot Kit!
+* 🥈 **2nd Place:** 2nd Place Trophy + Official Elecfreaks Cutebot Robot Kit + Conference Swag Pack.
+* 🥉 **3rd Place:** 3rd Place Trophy + Official Elecfreaks Cutebot Robot Kit.
 * 🎖️ **Judge's Innovation Award:** Special prize for the most creative UI, telemetry visualization, or autonomous line-following capability!
+
+![Robot Rally 1st, 2nd, and 3rd Prize Trophies and 1st Prize LEGO](images/contest_prizes.jpg)
 
 ---
 
