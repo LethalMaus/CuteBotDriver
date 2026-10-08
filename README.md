@@ -103,11 +103,19 @@ Send any query string to the RX characteristic (`#` terminated); the micro:bit p
 | `?TEMP#` | Onboard temperature sensor (°C) | `TEMP:[celsius]#\n` | `TEMP:24#\n` |
 | `PING#` | Connectivity / latency verification | `PONG#\n` | `PONG#\n` |
 
-*\* Note: If the micro:bit compass has not yet been calibrated, the first `?COMPASS#` query will trigger the one-time `TILT TO FILL SCREEN` calibration routine. See [Calibrating the micro:bit Compass](#calibrating-the-microbit-compass) below for instructions.*
+*\* Note: If the micro:bit compass has not yet been calibrated, the first `?COMPASS#` query will trigger the one-time `TILT TO FILL SCREEN` calibration routine. However, due to vertical mounting and DC motor proximity, compass readings on the Cutebot are unreliable. See [Calibrating the micro:bit Compass](#calibrating-the-microbit-compass) below for details.*
 
 ---
 
 ## Calibrating the micro:bit Compass
+
+> [!WARNING]
+> ### 🧭 Compass Reliability Warning: Vertical Mounting & Motor Interference
+> **Compass readings (`?COMPASS`) are unreliable and noisy while the micro:bit is plugged into the Cutebot.**
+> 1. **Vertical Mounting (Gimbal Lock):** The micro:bit runtime's built-in `compassHeading()` algorithm is mathematically designed for a board lying horizontally (flat on a table). When slotted vertically into the Cutebot chassis, the board's pitch is ~90°, which triggers an Euler angle mathematical singularity (gimbal lock in the tilt-compensation math). This causes readings to jump erratically, freeze, or drift with tiny tilts.
+> 2. **DC Motor Magnetic Interference:** The Cutebot's two brushed DC drive motors sit directly beneath the micro:bit connector. Their strong permanent magnets distort the local magnetic field far beyond Earth's natural geomagnetic field.
+>
+> **Recommended Alternative:** For straight-line navigation or autonomous assist, we strongly recommend using the bottom infrared line-tracking sensors (`?LINE`) or balancing differential motor speeds (`MS,left,right`) rather than relying on the compass.
 
 The BBC micro:bit V2 includes an onboard magnetometer (compass). To provide accurate heading readings (0°–359°), the compass must be calibrated before its first use or after flashing new firmware.
 

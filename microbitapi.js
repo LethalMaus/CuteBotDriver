@@ -241,6 +241,9 @@ bluetooth.onUartDataReceived("#", function () {
     } else if (cmd == "?COMPASS") {
         // Note: BBC micro:bit automatically triggers a one-time "TILT TO FILL SCREEN"
         // calibration routine if the magnetometer has not been calibrated since flashing.
+        // LIMITATION: Because the micro:bit is inserted vertically into the Cutebot chassis (pitch ~90°)
+        // and sits directly above the chassis DC drive motors, input.compassHeading() tilt
+        // compensation suffers from Euler gimbal lock and magnetic motor interference, making readings noisy.
         let heading = input.compassHeading()
         // Calling compassHeading above retains MakeCode's persistent, one-time
         // calibration. Its board-top heading is ill-conditioned when that axis
