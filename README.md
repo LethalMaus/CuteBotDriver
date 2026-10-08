@@ -97,11 +97,44 @@ Send any query string to the RX characteristic (`#` terminated); the micro:bit p
 | :--- | :--- | :--- | :--- |
 | `?DIST#` | Ultrasonic distance sensor in centimeters | `DIST:[cm]#\n` | `DIST:42#\n` |
 | `?LINE#` | Line tracker status (`0`=white, `1`=R black, `2`=L black, `3`=both black) | `LINE:[code]#\n` | `LINE:3#\n` |
-| `?COMPASS#` | Magnetometer / Compass heading (0° - 359°) | `COMPASS:[deg]#\n` | `COMPASS:180#\n` |
+| `?COMPASS#` | Magnetometer / Compass heading (0° - 359°)* | `COMPASS:[deg]#\n` | `COMPASS:180#\n` |
 | `?ACCEL#` | 3-axis accelerometer (X, Y, Z mg forces) | `ACCEL:[x],[y],[z]#\n` | `ACCEL:0,25,1020#\n` |
 | `?LIGHT#` | Ambient light sensor level (0 - 255) | `LIGHT:[level]#\n` | `LIGHT:128#\n` |
 | `?TEMP#` | Onboard temperature sensor (°C) | `TEMP:[celsius]#\n` | `TEMP:24#\n` |
 | `PING#` | Connectivity / latency verification | `PONG#\n` | `PONG#\n` |
+
+*\* Note: If the micro:bit compass has not yet been calibrated, the first `?COMPASS#` query will trigger the one-time `TILT TO FILL SCREEN` calibration routine. See [Calibrating the micro:bit Compass](#calibrating-the-microbit-compass) below for instructions.*
+
+---
+
+## Calibrating the micro:bit Compass
+
+The BBC micro:bit V2 includes an onboard magnetometer (compass). To provide accurate heading readings (0°–359°), the compass must be calibrated before its first use or after flashing new firmware.
+
+If the robot has not been calibrated, sending the `?COMPASS#` telemetry request will automatically initiate the calibration routine on the micro:bit.
+
+For official documentation, see the [micro:bit Compass Calibration Guide](https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass).
+
+### What Happens During Calibration?
+When `?COMPASS#` (or `input.compassHeading()`) is called for the first time:
+1. The micro:bit pauses normal operation and scrolls:
+   > **`TILT TO FILL SCREEN`**
+2. A single lit pixel will appear on the 5x5 LED matrix, acting like a rolling ball or bubble level.
+
+### Step-by-Step Calibration Instructions
+1. **Pick up the robot:** Hold the Cutebot car horizontally with both hands.
+2. **Tilt in all directions:** Tilt the Cutebot smoothly in circles and all directions to guide the dot across the 5x5 LED matrix. Each unlit LED reached by the dot will illuminate and stay lit.
+3. **Fill the screen:** Continue tilting until all 25 LEDs on the matrix are filled.
+4. **Completion:** Once every pixel is lit, the screen will clear or display a smile, and the robot will resume normal operation and respond with the heading value (`COMPASS:[deg]#\n`).
+
+> **Tip:** You do not have to wait for the words **`TILT TO FILL SCREEN`** to finish scrolling. The calibration routine starts in the background immediately, so you can begin tilting the robot right away to complete the process faster.
+
+### Calibration Tips & Best Practices
+* **Calibrate on the Cutebot with Accessories Connected:** Always calibrate with the micro:bit plugged into the Cutebot chassis, with the battery pack switched on and the ultrasonic sensor connected. Surrounding chassis electronics and motors generate localized magnetic fields that the calibration routine must detect and compensate for.
+* **Calibrate in Your Operating Environment:** Magnetic environments vary by room and location. Calibrate the robot in the same room or arena where you plan to drive it.
+* **Avoid Metal Surfaces:** Do not calibrate or operate the robot on metal desks or near large metal structures (such as steel beams or speaker magnets), as metal will distort the magnetometer readings.
+* **Horizontal Orientation:** The compass is designed for horizontal orientation (like an analog compass). On the micro:bit V2, the magnetometer is sensitive, so tilt smoothly.
+* **Calibration Memory & Persistence:** When flashed with MakeCode, calibration data is saved in persistent memory and remains saved across reboots and battery power cycles. Calibration is only cleared when a new firmware `.hex` file is flashed to the micro:bit.
 
 ---
 
