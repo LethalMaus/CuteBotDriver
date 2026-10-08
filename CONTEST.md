@@ -61,7 +61,7 @@ Raw driving speed is only half the battle. Our judges will award **bonus seconds
 
 ### 1. 📡 Two-Way Telemetry & Autonomous Assist (Up to -10s)
 * **Line Tracking Assist / Autonomous Steering:** Use the bottom infrared line sensors (`?LINE`) to stay centered on the track lines printed on the floor or implement an automated line-following lap.
-* **Heading Stabilization:** Use the onboard magnetometer compass (`?COMPASS`) to auto-correct steering and maintain a straight heading down the straightaways.
+* **Heading Stabilization:** Use motor balancing (`MS,left,right`) or sensor feedback to maintain a straight line down the straightaways. *(Note: Because the micro:bit is slotted vertically in the Cutebot and sits directly above the DC drive motors, magnetometer compass readings `?COMPASS` are noisy and unreliable. We strongly recommend using the infrared line sensors `?LINE` or calibrated differential motor speeds `MS` for straight-line tracking).*
 * **Telemetry Dashboard:** Display real-time gauges for line sensor status (`?LINE`), battery/temperature (`?TEMP`), ambient light (`?LIGHT`), or accelerometer g-forces (`?ACCEL`).
 * **Telemetry Speedometer & Latency Tracking:** Measure connection ping (`PING`) and estimate vehicle speed/drift using onboard sensors.
 
